@@ -1,0 +1,119 @@
+/* body {
+    padding-top: 0;
+    padding-left: 17rem;
+
+} */
+
+nav {
+    position: fixed;
+    background-color: $mainColor;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto auto 0;
+    width: 17rem;
+    height: 100vh;
+
+    div {
+
+        ul {
+            
+            list-style: none;
+            flex-direction: column;
+            width: 100%;
+            padding-left: 0;
+
+            li {
+
+                padding: 5%;
+
+                a {
+                    font-weight: bold;
+                    letter-spacing: 0.05rem;
+                    font-style: bold;
+                    font-family: $fontFam;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: $textColor;
+                }
+
+                a:hover {
+                    color: $textHoverColor;
+                }
+
+            }
+        }
+    }
+}
+
+.navbarFirst {
+    display: flex;
+    margin: auto auto 0;
+}
+
+.navbarSecond {
+    margin-bottom: auto;
+}
+
+.leftMenu {
+    img {
+        
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        vertical-align: middle;
+        padding-block-end: 10%;
+    }
+}
+
+.content {
+
+    display: flex;
+    padding: 20%;
+    display: flex;
+    align-items: center;
+    padding-left: 17rem;
+    flex-direction: column;
+
+}
+
+.margin {
+    margin-bottom: 5%;
+}
+
+.content-about {
+
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    /* border: 5px solid $mainColor;
+    border-radius: 50px;
+    //padding: 5px; */
+
+    h1{
+        font-weight: bold;
+        font-size: xx-large;
+        letter-spacing: 0.05rem;
+        font-style: bold;
+        font-family: $fontFam;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $textColor;
+    }
+
+    h2 {
+        font-size: x-large;
+        font-weight: bold;
+        font-family: $fontFam;
+        color: $textColor;
+    }
+
+    p {
+        font-size: large;
+        font-family: $fontFam;
+        color: $textColor;
+    }
+
+}
