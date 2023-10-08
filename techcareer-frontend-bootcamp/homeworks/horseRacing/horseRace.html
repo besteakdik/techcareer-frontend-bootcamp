@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Horse Racing</title>
+    <style>
+        
+        #race-track {
+            width: 1000px;
+            height: 350px;
+            border: 5px solid green;
+            position: relative;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .horse {
+            width: 200px;
+            height: 100px;
+            background-color: brown;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: left 0.1s;
+        }
+
+        #horse1 {
+            top: 0;
+        }
+        #horse2 {
+            top: 120px;
+        }
+
+        #finish-line {
+            width: 10px;
+            height: 350px;
+            background-color: red;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        #winner {
+            display: none;
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Horse Racing</h1>
+    <div id="race-track">
+        <img src="https://images.pexels.com/photos/53122/racehorse-horse-race-course-sport-53122.jpeg?cs=srgb&dl=pexels-pixabay-53122.jpg&fm=jpg" class="horse" id="horse1" style="left: 0;">
+
+    <br>
+    <br>
+
+    <img src="https://www.thoroughbreddailynews.com/wp-content/uploads/2022/02/Messier-Gallop-CD-05-04-22-Coady.jpg" class="horse" id="horse2" style="left: 0;">
+
+    <br>
+    <br>
+
+    <img src="https://www.ocregister.com/wp-content/uploads/2018/07/0310_SPO_LDN-L-SANTAANITA-0311-KB7_25597259-1.jpg?w=532" class="horse" id="horse3" style="left: 0;">
+
+        <div id="finish-line"></div>
+
+    </div>
+    <div id="winner"></div>
+
+    <script>
+        const horses = document.querySelectorAll('.horse');
+        const finishLine = document.getElementById('finish-line');
+        const winnerText = document.getElementById('winner');
+        const raceTrackWidth = document.getElementById('race-track').offsetWidth;
+
+        let raceFinished = false;
+
+        function startRace() {
+            if (raceFinished) return;
+
+            horses.forEach((horse, index) => {
+                const random = Math.floor(Math.random() * 10);
+                horse.style.left = horse.offsetLeft + random + 'px';
+
+                if (horse.offsetLeft >= raceTrackWidth - horse.clientWidth) {
+                    clearInterval(horseInterval);
+                    winnerText.innerHTML = `${horse.id} wins!`;
+                    winnerText.style.display = 'block';
+                    raceFinished = true;
+                }
+            });
+        }
+
+        const horseInterval = setInterval(startRace, 50);
+
+    </script>
+</body>
+</html>
